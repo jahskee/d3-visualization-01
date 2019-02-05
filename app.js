@@ -1,7 +1,8 @@
 
-
-d3.csv('data.csv').then( data => {
+d3.csv('data.csv').then( function(data) {
     generate(data);
+    console.log(data)
+   
 })
 
 function generate(data) {
@@ -10,6 +11,6 @@ function generate(data) {
     .enter()
     .append('p')
     .text(d => `hello world ${d}`)
-    .style('color', d => 'red')
+    .style('color', d => 'red');
 }
 
