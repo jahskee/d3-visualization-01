@@ -5,13 +5,12 @@ d3.csv('./data.csv').then( function(dataset) {
 })
 */
 
-d3.json('./data.json').then(function(data){
-
+d3.json('data.json').then(function(data){
     generateData(data);
 })
 function generateData(dataset) {
    
-   d3.select( 'body' )
+   d3.select( 'body' ).selectAll('p')
     .data(dataset)
     .enter()
     .append('p')
