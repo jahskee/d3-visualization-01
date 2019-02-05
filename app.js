@@ -1,16 +1,22 @@
 
-d3.csv('data.csv').then( function(data) {
-    generate(data);
-    console.log(data)
-   
+/*
+d3.csv('./data.csv').then( function(dataset) {
+    generateData(dataset.columns);
 })
+*/
 
-function generate(data) {
-    var el = d3.select( 'body' )
-    .data(data)
+d3.json('./data.json').then(function(data){
+
+    generateData(data);
+})
+function generateData(dataset) {
+   
+   d3.select( 'body' )
+    .data(dataset)
     .enter()
     .append('p')
     .text(d => `hello world ${d}`)
     .style('color', d => 'red');
 }
+
 
